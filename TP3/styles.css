@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    margin:0 auto;
+
+}
+#map {
+        width: 80%; 
+        height: 60vh; 
+    }
+
+#generar button, #map button {
+    padding: 10px 20px;
+    margin: 10px; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, rgba(96, 148, 0, 0.637), rgb(7, 162, 224));
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all ease 400ms;
+    justify-content: center;
+}
+
+#generar, #map {
+    text-align: center;
+}
+    
+
+
+body {
+    background-color: aliceblue;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+    background: linear-gradient(to right, rgb(96, 148, 0), rgb(0, 179, 255));
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: aliceblue;
+    padding: 5px;
+    box-shadow: 0px 2px 5px gray;
+}
+
+.contenedor {
+    width: 60%;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 2px 2px 7px rgb(187, 198, 214);
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .contenedor {
+    width: 90%;
+    }
+}
+
+h2,
+p {
+    color: rgb(17, 22, 37);
+}
+
+h2 span,
+p span {
+    color: rgb(119, 137, 172);
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+}
+
+.boton {
+    margin: 0 auto;
+    width:33.33%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
