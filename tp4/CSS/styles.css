@@ -1,0 +1,18 @@
+h3{
+    color: rgb(226, 186, 43);
+}
+h2{
+    text-align: center;
+}
+
+ #container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 100%;
+ }
+ #container > div{
+    width: 50%;
+    text-align: center;
+    border-top: 50%;
+ }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4</title>
+    <link rel="stylesheet" href="CSS/styles.css"/>
+</head>
+<body>
+    <h2> Ingrese 3 números por GRUPO</h2>
+<div id="container">   
+    <div id="grupo1">
+        <h3> GRUPO 1</h3>
+        <input id="numeros" type="number">
+        <button  onclick="Capturar1()">Enviar</button>
+    </div>
+    <div id="grupo2">
+        <h3> GRUPO 2</h3>
+        <input id="numeros2" type="number">
+        <button  onclick="Capturar2()">Enviar</button>
+
+    </div>
+    <div id="containerId"></div>
+    <div class="personaje-container" id="per1"></div>
+    <div class="personaje-container" id="per2"></div>
+    <div class="personaje-container" id="per3"></div>
+    <button onclick="buscarPersonajes(valores1)">buscarPersonajes</button>
+
+    
+    <script src="JS/fn.js"></script>
+</div>    
+
+</body>
+</html>
+
+<!-- dos imput que carguen tres numeros y enviar con boton
+    propiedad de imput disolver, desabilitar boton enviar
+    llamar api rikandm y que aparezcan los personajes de cada numero
+-->
