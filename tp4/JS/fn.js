@@ -2,10 +2,10 @@ var valores1 = [];
 var valores2 = [];
 
 function Capturar1() {
-    let agregarNum = parseInt(document.getElementById("numeros").value);
+    let agregarNum = (document.getElementById("numeros").value);
     console.log(agregarNum);
 
-    if (isNaN(agregarNum) || agregarNum < 1 || agregarNum > 826) {
+    if (  agregarNum < 1 || agregarNum > 826) {
         alert("Ingrese un número válido entre 1 y 826.");
         return;
     }
@@ -22,10 +22,10 @@ function Capturar1() {
 }
 
 function Capturar2() {
-    let agregarNum2 = parseInt(document.getElementById("numeros2").value);
+    let agregarNum2 = (document.getElementById("numeros2").value);
     console.log(agregarNum2);
 
-    if (isNaN(agregarNum2) || agregarNum2 < 1 || agregarNum2 > 826) {
+    if ( agregarNum2 < 1 || agregarNum2 > 826) {
         alert("Ingrese un número válido entre 1 y 826.");
         return;
     }
@@ -73,6 +73,9 @@ async function buscarPersonajes() {
                 personajeDiv.appendChild(nombre);
                 personajeDiv.appendChild(id);
             })
-            .catch(error => console.error('Error al obtener los personajes:', error));
-    };}
+            .catch(err=>{
+                document.getElementById('error').innerHTML = " "+ err +".";
+                console.log(err);
+              })
+    }; }
     buscarPersonajes([]);
