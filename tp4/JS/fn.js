@@ -2,66 +2,77 @@ var valores1 = [];
 var valores2 = [];
 
 function Capturar1() {
-
-    let agregarNum = document.getElementById("numeros").value; 
+    let agregarNum = parseInt(document.getElementById("numeros").value);
     console.log(agregarNum);
 
-    valores1.push(agregarNum);
-    console.log(valores1)
-
-    if (valores1.length ==3) {
-        alert("Ya se han ingresado 3 números.");
-        } 
-    
-    if (valores1 < 1 || valores1> 183) {
-        alert("Ingrese un número válido entre 1 y 183.");
+    if (isNaN(agregarNum) || agregarNum < 1 || agregarNum > 826) {
+        alert("Ingrese un número válido entre 1 y 826.");
         return;
-        }
-        document.getElementById("numeros").value = ""; // Limpiar el input
+    }
 
+    valores1.push(agregarNum);
+    console.log(valores1);
+
+    if (valores1.length == 3) {
+        alert("Ya se han ingresado 3 números.");
+        document.getElementById("numeros").disabled = true; // Inhabilitar el input
+    }
+
+    document.getElementById("numeros").value = ""; // Limpiar el input
 }
 
 function Capturar2() {
-
-console.log("capturar2")
-    let agregarNum2 = document.getElementById("numeros2").value; 
+    let agregarNum2 = parseInt(document.getElementById("numeros2").value);
     console.log(agregarNum2);
 
+    if (isNaN(agregarNum2) || agregarNum2 < 1 || agregarNum2 > 826) {
+        alert("Ingrese un número válido entre 1 y 826.");
+        return;
+    }
+
     valores2.push(agregarNum2);
-    console.log(valores2)
+    console.log(valores2);
 
-    if (valores2.length ==3) {
-         alert("Ya se han ingresado 3 números.");
-        } 
-    
-    if (valores2 < 1 || valores2> 183) {
-       alert("Ingrese un número válido entre 1 y 183.");
-       return;
-       }
-        document.getElementById("numeros2").value = ""; // Limpiar el input
+    if (valores2.length == 3) {
+        alert("Ya se han ingresado 3 números.");
+        document.getElementById("numeros2").disabled = true; 
+    }
 
+    document.getElementById("numeros2").value = ""; 
 }
-function buscarPersonajes(valores1) {
-    valores1.forEach(valores1 => {
-        const url =(`https://rickandmortyapi.com/api/character/${valores1}`)
+
+async function buscarPersonajes() {
+    
+    const todosValores = valores1.concat(valores2);
+    const equipo1Div = document.getElementById("equipo1");
+    const equipo2Div = document.getElementById("equipo2");
+    for (let i=0; i<todosValores.length; i++){
+
+        const url = `https://rickandmortyapi.com/api/character/${todosValores[i]}`;
         
-    fetch(url)
-    .then(response => response.json())
-    .then(data => {
-  
-    
-    console.log(data.image);
-    
-    })
-    .catch(error => console.error('Error al obtener los personajes:', error));
-   
-})}
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.image)
+                const personajeDiv = document.createElement("div");
+                const imagen = document.createElement("img");
+                const nombre = document.createElement("p");
+                const id = document.createElement("p");
 
-function mostrarPersonaje(containerId) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = `
-    <img src="${data.image}" alt="${data.name}">
-    <p>${data.name}</p>
-    `;
-}
+                imagen.src = data.image;
+                nombre.textContent = `Nombre: ${data.name}`;
+                id.textContent = `ID: ${data.id}`;
 
+            
+                if (i < valores1.length) {
+                    equipo1Div.appendChild(personajeDiv);
+                } else {
+                    equipo2Div.appendChild(personajeDiv);
+                }
+                personajeDiv.appendChild(imagen);
+                personajeDiv.appendChild(nombre);
+                personajeDiv.appendChild(id);
+            })
+            .catch(error => console.error('Error al obtener los personajes:', error));
+    };}
+    buscarPersonajes([]);

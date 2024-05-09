@@ -1,18 +1,77 @@
-h3{
-    color: rgb(226, 186, 43);
-}
-h2{
-    text-align: center;
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
- #container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   width: 100%;
- }
- #container > div{
-    width: 50%;
-    text-align: center;
-    border-top: 50%;
- }
+body {
+  background-color: rgb(240, 255, 243);
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#container > div {
+  margin: 0 10px;
+}
+
+#buscar-button {
+  margin-top: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  background: linear-gradient(to right, rgba(226, 186, 43, 0.623), rgba(226, 141, 43, 0.629));
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  color: aliceblue;
+  padding: 20px;
+  box-shadow: 0px 2px 5px gray;
+}
+
+h3 {
+  color: rgb(226, 186, 43);
+  text-align: center;
+}
+
+.equipo {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.tarjeta {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  width: 30%;
+  text-align: center;
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+input, button {
+  padding: 8px 16px;
+  margin: 10px;
+  border: 0;
+  font-size: 18px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  background-color: rgba(226, 186, 43, 0.315);
+  box-shadow: 0px 2px 5px gray;
+  cursor: pointer;
+}
+
+button {
+  background-color: rgba(226, 186, 43, 0.742);
+  color: aliceblue;
+}
